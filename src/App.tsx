@@ -1,12 +1,14 @@
-import {HashRouter as Router} from "react-router-dom";
-import RouterView from "./route";
+import {createHashRouter, RouterProvider} from "react-router-dom";
+//import RouterView from "./route";
+import baseRoute from "./route/baseRoute.tsx";
 
-
+const routers = createHashRouter(baseRoute)
 function App() {
   return (
-      <Router>
-          <RouterView></RouterView>
-      </Router>
+      // <Router>
+      //     <RouterView></RouterView>
+      // </Router>
+      <RouterProvider router={routers}/>
   )
 }
 
